@@ -1,0 +1,258 @@
+/* Additional CSS for animations and enhancements */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header.scrolled {
+    background-color: rgba(26, 58, 110, 0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Drone animation for hero section */
+.drone-animation {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+}
+
+.drone-body {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    top: 40px;
+    left: 20px;
+    animation: hover 2s infinite ease-in-out;
+}
+
+.drone-rotor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #666;
+    animation: spin 0.5s infinite linear;
+}
+
+.drone-rotor-1 {
+    top: 30px;
+    left: 10px;
+}
+
+.drone-rotor-2 {
+    top: 30px;
+    right: 10px;
+}
+
+.drone-rotor-3 {
+    bottom: 30px;
+    left: 10px;
+}
+
+.drone-rotor-4 {
+    bottom: 30px;
+    right: 10px;
+}
+
+.drone-camera {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #0f75bc;
+    border-radius: 50%;
+    bottom: 35px;
+    left: 45px;
+    animation: blink 3s infinite;
+}
+
+@keyframes hover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Enhanced card styles */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Stats counter */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #14294d;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #0a5a8e;
+    color: white;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: #c1121f;
+    color: white;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    width: 0;
+    transition: width 1s ease;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+}
